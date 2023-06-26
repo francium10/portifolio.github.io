@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@400;500&display=swap');
+
+/*:root{
+  --primarycolor:#17202a;
+  --secondarycolor:#27ae60;
+  --lightcolor:#f4f4f4;
+  --white:#283747;
+  --darkcolor:#283747; }*/
+/*the above are variables used for colors to make it easy for us*/
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:"poppins",sans-serif;
+}
+/*the *{ }is used as reset any properties to give room to our new css styles */
+
+a {
+  text-decoration: none;
+}
+/*this (a) is used to reset all properties of (link) the portifolia and the rest of nav */
+
+.container{
+  max-width:1440px;
+  margin:0 auto;
+  padding:0 70px;
+}
+/*  NOTE(the header properties are made after() this container properties are used to set everything to the 
+centre of the page padding puts padding(makes good centre aligmnent of both nav and logo div)*/
+
+/*Header section starts */
+header{
+  width:100%;
+  position: fixed;
+  z-index: 1000;
+/* absolute makes the postion fixed */
+}
+header.sticky{
+    background:#283747;
+    transition: all 0.5s ease;
+}
+
+.logo h2 span {
+font-size: 3rem;
+}
+
+.navbar .logo a {
+  color:#27ae60;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.navbar{
+  display: flex;
+  justify-content:space-between;
+  align-items: centre;
+  padding: 0.4rem 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding-left:20rem;
+}
+
+nav li {
+list-style: none;
+margin: 0.4rem;
+}
+
+nav li a{
+  color: white;
+  padding:0.6rem 0.8rem;
+  cursor:pointer;
+  transition: all 0.5s ease;
+}
+
+nav li a:hover {
+  background:#27ae60;
+  color: white;
+}
+.btn .menu-btn {
+  display:none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.btn .close-btn {
+  display:none;
+  color:white;
+  font-size: 1.5rem;
+}
+/*Header section closes*/
+
+
+
+
+/*Hero Section start(showcase area)*/
+#hero{
+  width:100%;
+  min-height: 100vh;
+  background:#17202a;
+}
+/*hero is the Id containg all show case area and the above are just few things to control the entire div and chidren*/
+
+#hero .content_manage{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100vh;
+  align-items:center;
+  color: white;
+}
+/*controls both image and texts */
+
+#hero .hero_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: centre;
+  height: 50vh;
+  width: 150%;
+  margin-left: 40px;
+}
+
+#hero .hero_content .txt_content{
+  display: flex;
+}
+
+#hero .hero_img{
+  max-width:100%;
+/*  border-radius:0% 50% 0% 50%;*/
+/*  background:white;*/
+}
+
+#hero .content_manage img{
+  display: block;
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#hero .hero_content .txt-1{
+  font-size: 2.5rem;
+}
+
+#hero .hero_content .txt-2{
+font-size: 4.2rem;
+font-weight: 600;
+letter-spacing: 5px;
+margin-left:-4px;
+}
+
+
+#hero .hero_content .normaltxt{
+  font-size: 3.5rem;
+  margin-right:0.6rem;
+}
+/*margin right fixes the issue of space between words */
+
+.txt_content .changetxt{
+  font-size: 3.5rem;
+/*  margin: 0.6rem 0;*/
+  color:#27ae60;
+  font-weight: 600;
+}
+
+/*changing text starts*/
+ .txt_content .changetxt::before{
+  content: "";
+  position: absolute;
+  top:5;
+  left:50;
+  width:10%;
+  height: 10%;
+  padding-left: 10rem;
+  background:transparent ;
+/*background: rgba(255, 7, 7, 0.1);*/
+  animation: animate3 5s steps(5) infinite;
+  border-left: 2px solid transparent;
+}
+@keyframes animate3{
+  3%{
+    left:0;
+  }
+  30%{
+    left: 100%;
+  }
+  80%{
+    left:100%;
+  }
+  100%{
+  left: 0;
+  }
+}
+/*changing text ends*/
+
+/*hero content or showcase area ends*/
+
+
+/*about portion starts */
+section{
+  padding:13rem 0;
+}
+
+/*section:hover{
+  transform:translateY(-15%);
+}
+*/
+.aboutcontent{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  width:100% ;
+}
+
+#about .title{
+  text-align: center;
+  font font-size:3rem;
+  font-weight:500;
+  font-family: "ubuntu",sans-serif;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  position: relative;
+}
+
+#about .title::before {
+  content: "";
+  width: 7rem;
+  height: 4px;
+  background: #27ae60;
+  position:absolute;
+  top:30%;
+}
+
+.img_section{
+  width: 30%;
+}
+.aboutcontent img{
+  float: left;
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  border-radius: 5%;
+  box-shadow: 5px 5px 5px rgba(0,0,0,5);
+}
+.content_content{
+  padding: 2.5rem 0;
+
+}
+.content_content .word{
+  display: flex;
+  font-size: 2.5;
+  font-weight: 600;
+}
+
+.content_content p{
+  padding: 1rem 0;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #27ae60;
+  color: white;
+  background:#27ae60 ;
+  font-size: 1.2 rem;
+  cursor:pointer ;
+  transition: all 0.5s ease;
+}
+
+ button:hover{
+  background: none;
+  border: 1px solid #27ae60;
+  padding: 0.5rem 1rem;
+  color: black;
+}
+/*about portion ends*/
+
+/*<!-- services  section starts -->*/
+#services{
+  background:#17202a;
+}
+#services .title{
+  text-align: center;
+  font font-size: 3rem;
+  font-weight:500;
+  font-family: "ubuntu",sans-serif;
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.8rem;
+  position: relative;
+  color: white;
+}
+
+#services .title::before {
+  content: "";
+  width: 6rem;
+  height: 4px;
+  background: #27ae60;
+  position:absolute;
+  top: 30%;
+}
+
+#services .card_content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100;
+  text-align: center;
+  grid-column-gap: 1rem;
+}
+
+#services .card_content .cards{
+  background: #283747;
+  padding: 2rem;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition:all 0.5s ease-in-out;
+/* the feature transition isnt working  */
+}
+
+#services .card_content .cards:hover{
+transform:translateY(-15%);
+background:#f4f4f4;
+color:#263238;
+}
+
+#services .card_content .cards i{
+  color:#27ae60;
+  font-size: 2.5rem;
+  padding-bottom: 1.5rem;
+  }
+  
+
+#services .card_content .cards h2{
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#services .card_content .cards p{
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+#services .card_content .cards button{
+  color: white;
+  display: inline-block;
+  padding: 0.7rem 0.6rem;
+  margin: 1.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #17202a;
+  transition: all 0.5s ease;
+}
+/*<!-- Services section ends -->*/
+
+/*Skills section starts*/
+#skills .title{
+  text-align: center;
+  font font-size: 10px;
+  font-weight:500;
+  font-family: "ubuntu",sans-serif;
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.8rem;
+  position: relative;
+  color: black;
+}
+
+#skills .title::before {
+  content: "";
+  width: 6rem;
+  height: 4px;
+  background: #27ae60;
+  position:absolute;
+  top: 30%;
+}
+
+#skills .skills_container{
+  display: grid;
+  grid-column-gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+.skills_content h2{
+  font-size: 2rem;
+  padding-bottom:1.5rem;
+}
+
+.skills_content p{
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.9;
+}
+
+.skills_progress .Info{
+display: flex;
+justify-content: space-between;
+line-height: 1.8;
+}
+
+.skills_progress .progress{
+  margin-bottom: 1rem;
+}
+
+.skills_progress.Info span{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.skills_progress .line_css{
+  height: 0.3rem;
+  width: 100%;
+  background:#f4f4f4;
+/*  background: red;*/
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.skills_progress .line_css::before{
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  background:red;
+  left: 0;
+  top: 0;
+}
+
+.skills_progress .html::before{
+  content: "";
+  position: absolute;
+  width:90%;
+  height: 100%;
+  background:#27ae60;
+  left: 0;
+  top: 0;
+}
+.skills_progress .css::before{
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 100%;
+  background:#27ae60;
+  left: 0;
+  top: 0;
+}
+
+.skills_progress .js::before{
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  background:#27ae60;
+  left: 0;
+  top: 0;
+}
+
+.skills_progress .react::before{
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  background:#27ae60;
+  left: 0;
+  top: 0;
+}
+.skills_progress .MySQL::before{
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  background:#27ae60;
+  left: 0;
+  top: 0;
+}
+
+
+
+/*Skills section ends*/
+
+/*My Team Section starts*/
+#Myteam{
+  width: 100;
+  background:#17202a;
+}
+#Myteam .title{
+  text-align: center;
+  font font-size: 10px;
+  font-weight:500;
+  font-family: "ubuntu",sans-serif;
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.8rem;
+  position: relative;
+  color:white;
+}
+
+#Myteam .title::before {
+  content: "";
+  width: 7rem;
+  height: 4px;
+  background: #27ae60;
+  position:absolute;
+  top: 30%;
+}
+
+#Myteam .card_container img{
+  width: 40%;
+  display: block;
+  border-radius: 50%;
+  border: 3px solid #27ae60;
+  object-fit: cover;
+  margin: auto;
+}
+
+#Myteam .card_container{
+  display: flex;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#Myteam .card_container .cards{
+  background:#283747 ;
+  padding: 2rem;
+  color: white;
+  border-radius: 10% 0 10% 0;
+}
+
+#Myteam .card_container .cards h2{
+  padding: 1.5rem 0;
+}
+#Myteam .card_container .cards p{
+  text-align:justify ;
+}
+/*My Team Section Ends*/
+
+/*Contact Section Starts*/
+
+#contact .title{
+  text-align: center;
+  font font-size: 4rem;
+  font-weight:500;
+  font-family: "ubuntu",sans-serif;
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.8rem;
+  position: relative;
+  color:black;
+}
+
+#contact .title::before {
+  content: "";
+  width: 8rem;
+  height: 4px;
+  background: #27ae60;
+  position:absolute;
+  top: 30%;
+}
+
+#contact .contact_container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+#contact .contact_container h3{
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+#contact .contact_container .contact_content> p{
+  font-size: 1.1rem;
+  padding-bottom: 2rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+#contact .contact_info {
+  display: flex;
+}
+
+#contact .contact_info i{
+  font-size:1.8rem;
+  color:#27ae60;
+  margin-bottom: 3rem;
+}
+
+#contact .contact_info span{
+  font-size: 1.2rem;
+  color: #797d77;
+}
+/*the form properties*/
+
+
+#contact .contact_form Input,textarea{
+width: 100%;
+padding:0.6rem 0;
+margin-bottom: 0.4rem;
+font-size: 1.1rem;
+}
+#contact .contact_form button{
+  margin-top: 1rem 0;
+  padding: 0.7rem 0.7rem;
+  border: 1px solid #27ae60;
+  outline: none;
+  background: inherit;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: all 0.5s ease;
+}
+
+#contact .contact_form button:hover {
+  color:white;
+  background:#27ae60;
+}
+/*Contact Section Ends */
+
+/*footer starts*/
+footer{
+  background: #283747;
+  color: #fff;
+  text-align:center ;
+  padding: 1.8rem 0;
+}
+footer a{
+  background:#283747;
+  color:#27ae60;
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 1.1 rem;
+}
+/*footer ends */
+
+
+
